@@ -41,4 +41,8 @@ public class AddController {
 	 public List<DocumentsData> getdoc() {
 		 return addservice.documentGen();
 	}
+	@GetMapping("/getdocid")
+	 public List<DocId> getdocId() {
+		 return addservice.genDocId();
+	}
 }

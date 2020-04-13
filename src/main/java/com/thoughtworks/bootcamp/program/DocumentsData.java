@@ -1,8 +1,9 @@
 package com.thoughtworks.bootcamp.program;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@JsonPropertyOrder(alphabetic = false)
 public class DocumentsData {
 
 	
@@ -12,12 +13,11 @@ public class DocumentsData {
 	private String documentCategory;
 	private String attachmentContent;
 
-	
+	@JsonProperty("Employee_ID")
 	public String getEmployee_ID() {
 		return Employee_ID;
 	}
 
-	
 	public void setEmployee_ID(String employee_ID) {
 		Employee_ID = employee_ID;
 	}

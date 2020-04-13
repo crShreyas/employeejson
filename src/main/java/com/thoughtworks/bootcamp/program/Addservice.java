@@ -214,30 +214,48 @@ public class Addservice {
 	}
 
 	public List<DocumentsData> documentGen() {
-		
+
 		List<DocumentsData> dlist = new ArrayList<DocumentsData>();
-		int departmentDataEmpId=11110;
+		int departmentDataEmpId = 11110;
+		int docCounter = 0;
 		for (int j = 0; j < 10; j++) {
 
 			for (int i = 0; i < doccategory.length; i++) {
 				DocumentsData data = new DocumentsData();
 				data.setEmployee_ID(String.valueOf(departmentDataEmpId));
-				data.setReferenceID(doccategory[i]);
+				data.setReferenceID("WORKER_DOCUMENT" + "__" + (docCounter++) + "_" + data.getEmployee_ID());
 				data.setDocumentName(doccategory[i] + "_" + data.getEmployee_ID());
 				data.setDocumentCategory(doccategory[i]);
-				if (doccategory[i] .equals( "Passports and Visas")) {
+				if (doccategory[i].equals("Passports and Visas")) {
 					data.setAttachmentContent("passport doc");
 				} else {
 					data.setAttachmentContent("Education doc");
 				}
 				dlist.add(data);
-				
+
 			}
 			departmentDataEmpId++;
 		}
 
 		return dlist;
 
+	}
+
+	public List<DocId> genDocId() {
+		List<DocId> listDocIDocIds = new ArrayList<DocId>();
+		int departmentDataEmpId = 11110;
+
+		int docCounter = 0;
+		for (int i = 0; i < 5; i++) {
+			DocId docId = new DocId();
+			List<String> docidlist = new ArrayList<String>();
+			docId.setEmployeeId(String.valueOf(departmentDataEmpId++));
+			docidlist.add("WORKER_DOCUMENT" + "__" + (docCounter++) + "_" + docId.getEmployeeId());
+			docidlist.add("WORKER_DOCUMENT" + "__" + (docCounter++) + "_" + docId.getEmployeeId());
+			listDocIDocIds.add(docId);
+			docId.setDocumentIds(docidlist);
+		}
+		return listDocIDocIds;
 	}
 
 }
