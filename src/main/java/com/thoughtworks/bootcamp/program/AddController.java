@@ -37,4 +37,8 @@ public class AddController {
 	 public List<Employee> getEmps() {
 		 return addservice.getemps();
 	}
+	@GetMapping("/getdoc")
+	 public List<DocumentsData> getdoc() {
+		 return addservice.documentGen();
+	}
 }
