@@ -121,11 +121,11 @@ public class Addservice {
 		return homeLocation[homecounter];
 	}
 
-	public List<Employee> getemps() {
+	public List<Employee> getemps(int number) {
 		List<Employee> listOfEmployee = new ArrayList<Employee>();
 		int empid = 11110;
 
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < number; i++) {
 
 			Employee emp = new Employee();
 			emp.setEmployeeId(String.valueOf(empid++));
@@ -213,12 +213,12 @@ public class Addservice {
 		return homeLocation[homecounter];
 	}
 
-	public List<DocumentsData> documentGen() {
+	public List<DocumentsData> documentGen(int number) {
 
 		List<DocumentsData> dlist = new ArrayList<DocumentsData>();
 		int departmentDataEmpId = 11110;
 		int docCounter = 0;
-		for (int j = 0; j < 10; j++) {
+		for (int j = 0; j < number; j++) {
 
 			for (int i = 0; i < doccategory.length; i++) {
 				DocumentsData data = new DocumentsData();
@@ -241,12 +241,12 @@ public class Addservice {
 
 	}
 
-	public List<DocId> genDocId() {
+	public List<DocId> genDocId(int number) {
 		List<DocId> listDocIDocIds = new ArrayList<DocId>();
 		int departmentDataEmpId = 11110;
 
 		int docCounter = 0;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < number; i++) {
 			DocId docId = new DocId();
 			List<String> docidlist = new ArrayList<String>();
 			docId.setEmployeeId(String.valueOf(departmentDataEmpId++));

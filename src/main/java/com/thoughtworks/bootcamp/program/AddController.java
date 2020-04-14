@@ -34,15 +34,15 @@ public class AddController {
 		return  ResponseEntity.status(HttpStatus.OK).body(emp);
 	}
 	@GetMapping("/getemps")
-	 public List<Employee> getEmps() {
-		 return addservice.getemps();
+	 public List<Employee> getEmps(@RequestParam int number) {
+		 return addservice.getemps(number);
 	}
 	@GetMapping("/getdoc")
-	 public List<DocumentsData> getdoc() {
-		 return addservice.documentGen();
+	 public List<DocumentsData> getdoc(@RequestParam int number) {
+		 return addservice.documentGen(number);
 	}
 	@GetMapping("/getdocid")
-	 public List<DocId> getdocId() {
-		 return addservice.genDocId();
+	 public List<DocId> getdocId(@RequestParam int number) {
+		 return addservice.genDocId(number);
 	}
 }
